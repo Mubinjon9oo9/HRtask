@@ -1,11 +1,16 @@
+import json
 import telebot
 from telebot import types
 import sqlite3
 import db as rep
 import re
+import os
 
-TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN'
-bot = telebot.TeleBot("7701481676:AAFg5Lz5lFZ47SFk6qixSwynk9r8SJaHmyE")
+with open('configs.json', 'r') as f:
+    config = json.load(f)
+TOKEN = config.get('TELEGRAM_BOT_TOKEN')
+
+bot = telebot.TeleBot(TOKEN)
 questions = [
     # "1. Введите ФИО",
     # "2. Ваш номер телефона",

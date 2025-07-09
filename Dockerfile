@@ -10,5 +10,6 @@ COPY . /app
 # Устанавливаем зависимости
 RUN pip install --no-cache-dir -r requirements.txt
 
+
 # Указываем команду для запуска бота
 CMD ["python", "main.py"]
